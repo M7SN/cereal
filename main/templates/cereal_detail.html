@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% load staticfiles %}
+{# 
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Cereal List</title>
+	<script src="{% static 'js/jquery-1.11.3.min.js' %}"></script>
+	<script src="{% static 'js/bootstrap.min.js' %}"></script>
+
+	<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
+
+</head> #}
+{% block body %}
+
+	<body>
+
+	<h3>{{ cereal.name }}</h3>
+	<ul>
+		<li><b>Manufacturer:</b> {{ cereal.manufacturer}}</li>
+		
+		{% for fact in cereal.nutrition.nutrition_list %}
+			<li>{{ fact }}</li>
+		{% endfor %}
+	</ul>
+
+{% endblock %}
+
+	{# 	
+	</body>
+
+	
+</html> #}

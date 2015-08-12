@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+
+
+{% block body %}
+	
+	<form action='/form_view/' method='POST'>
+	{% csrf_token %}
+    
+    Cereal:
+    </br>
+    <input type="text" name="cereal" >
+
+    </br>
+    <input type="submit" value="Submit" >
+
+    </form>
+
+    </br>
+    </br>
+
+  
+    Get: {{ get }}
+    </br>
+    Post: {{ post }}
+
+    </br>
+    </br>
+    {% for cereal in cereals %}
+    	{{ cereal.name }} </br>
+    {% endfor %}
+
+{% endblock %}
+	
