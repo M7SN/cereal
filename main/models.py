@@ -11,9 +11,10 @@ class Manufacturer(models.Model):
 class Cereal(models.Model):
     name = models.CharField(max_length=40, null=True)
     manufacturer = models.ForeignKey('main.Manufacturer', null=True)
-    type = models.CharField(max_length=40, null=True)
-    display_shelf = models.IntegerField(null=True)
+    type = models.CharField(max_length=40, null=True, blank=True)
+    display_shelf = models.IntegerField(null=True, blank=True)
     image = models.ImageField(upload_to="cereal", null=True)
+    info = models.TextField()
 
 
     def __unicode__(self):
